@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+}
+.wrapper{
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+
+}
+.column{
+    border: 3px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: antiquewhite;
+    padding: 5px 15px 5px 15px;
+}    
+.task{
+    border: 1px solid;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background-color: azure;
+}
+.add-form{
+    border: 3px solid;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background-color: azure;
+}
+.wrapper-main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.login-wrapp{
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    width: 100vw;
+    height: 50px;
+    padding:  0 20px 0 20px;
+    background-color: bisque;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    
+    align-items: center;
+}

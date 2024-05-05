@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/css/style.css" rel="stylesheet" />
+    </head>
+    <body>
+        <header>
+        </header>
+        <div class="header">
+            <form method='POST' action='/logout'>
+                <input type='submit' value='выйти'/>
+            </form>
+        </div>
+        <main>
+            <div class="wrapper">
+                <div class="add-form">
+                    <h2>Добавить задание</h2>
+                    <form method='POST' action='/addTask'>
+                        <input type='text' name="info" placeholder="Новое задание" required/>
+                        <br>
+                        <input type='submit' value='Добавить'/>
+                    </form>
+                </div>
+                <div class="column">
+                    <h2>Задачи</h2>
+                    {% for task in taskstodo %}
+                        <div class="task">
+                            <p>{{ task.dataValues.id }} {{ task.dataValues.title }}</p>
+                            <form method="POST" action="/deleteTask?id={{ task.dataValues.id }}">
+                                <input type="submit" value="Удалить" id="{{ task.dataValues.id }}"/>
+                            </form>
+                            <form method="POST" action="/completed?id={{ task.dataValues.id }}">
+                                <input type="submit" value="✅" id="{{ task.dataValues.id }}"/>
+                            </form>
+                        </div>
+                    {% endfor %}
+                </div>
+                    <div class="column">
+                        <h2>Выполненое</h2>
+                        {% for task in tasksDone %}
+                            <div class="task">
+                                <p>{{ task.dataValues.id }} {{ task.dataValues.title }}</p>
+                                <form method="POST" action="/deleteTask?id={{ task.dataValues.id }}">
+                                    <input type="submit" value="Удалить" id="{{ task.dataValues.id }}"/>
+                                </form>
+                                <form method="POST" action="/completed?id={{ task.dataValues.id }}">
+                                    <input type="submit" value="❌" id="{{ task.dataValues.id }}"/>
+                                </form>
+                            </div>
+                        {% endfor %}
+                </div>
+            </div>
+        </main>
+        <footer>
+        </footer>
+    </body>
+    </html>
+    
